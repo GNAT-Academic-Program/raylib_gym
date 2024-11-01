@@ -12,4 +12,4 @@ tags = []
 executables = ["raylib_gym"]
 
 [[depends-on]]
-raylib = "~0.1.0"
+raylib = "*"

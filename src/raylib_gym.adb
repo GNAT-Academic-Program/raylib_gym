@@ -20,7 +20,8 @@ procedure Raylib_Gym is
 begin
    Raylib.InitWindow (screenWidth, screenHeight, New_String ("Raylib Gym"));
 
-   Model := Raylib.LoadModel (New_String ("/home/henley/Desktop/GAP_org/raylib_gym/data/race_car.gltf"));
+   Model := Raylib.LoadModel (New_String ("./data/race_car.gltf"));
+   -- RUN THE EXECUTABLE FROM THE ROOT OF THE PROJECT -> bin/raylib_gym
 
    Cam.position := (10.0, 10.0, 10.0);
    Cam.target := (0.0, 0.0, 0.0);
