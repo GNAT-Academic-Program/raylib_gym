@@ -16,8 +16,12 @@ procedure Raylib_Gym is
 
    Car : Raylib.Model;
    Race_Track : Raylib.Model;
+
    Outer_Boundary : Raylib.Model;
+   Outer_Boundary_Mesh : Raylib.Mesh;
+
    Inner_Boundary : Raylib.Model;
+   Inner_Boundary_Mesh : Raylib.Mesh;
 
    World_Pos : Raylib.Vector3 := (0.0, 0.0, 0.0);
    World_Rot_Axis : Raylib.Vector3 := (0.0, 1.0, 0.0);
@@ -33,12 +37,16 @@ procedure Raylib_Gym is
                                       -Center_BB_Size.z / 2.0);
 
    Center_BB : Raylib.BoundingBox := ((0.0, 0.0, 0.0), (100.0, 100.0, 100.0));
+
 begin
    Raylib.InitWindow (screenWidth, screenHeight, New_String ("Raylib Gym"));
    
    Car := Raylib.LoadModel (New_String ("./data/race_car.gltf"));
    Race_Track := Raylib.LoadModel (New_String ("./data/race_track.gltf"));
+
    Outer_Boundary := Raylib.LoadModel (New_String ("./data/outer_boundary.gltf"));
+   Outer_Boundary_Mesh := Outer_Boundary.meshes.all;
+
    Inner_Boundary := Raylib.LoadModel (New_String ("./data/inner_boundary.gltf"));
    -- RUN THE EXECUTABLE FROM THE ROOT OF THE PROJECT -> bin/raylib_gym
 
