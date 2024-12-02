@@ -1,6 +1,8 @@
 with "config/raylib_gym_config.gpr";
 project Raylib_Gym is
 
+   for Languages use ("Ada", "C");
+
    for Source_Dirs use ("src/", "config/");
    for Object_Dir use "obj/" & Raylib_Gym_Config.Build_Profile;
    for Create_Missing_Dirs use "True";
@@ -8,7 +10,7 @@ project Raylib_Gym is
    for Main use ("raylib_gym.adb");
 
    package Compiler is
-      for Default_Switches ("Ada") use Raylib_Gym_Config.Ada_Compiler_Switches;
+      for Default_Switches ("Ada") use Raylib_Gym_Config.Ada_Compiler_Switches & ("-gnat2022");
    end Compiler;
 
    package Binder is
